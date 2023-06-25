@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lbXDnQ/nk43Y11TFeeDmL9hJQZD6qNZazBuAXqpaDNAEuuOVSgWqshBmxPI9LJlOwHi8OVdZxJTjvASINCpM5w==",
+  "dgSpecHash": "ItgjyT49YRRRYzigQxRZU6+DlWDHwrzu9vEgAeOu7PZu8jIXN5zzhGBMceTgf5OZRkdQfLYJ1/y33gD0nvaxCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventasCaramelo\\SistemaVentaAngular.csproj",
+  "projectFilePath": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\SistemaVentaAngular.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mario\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

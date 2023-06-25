@@ -9,17 +9,17 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemaVentaAngular
 build_property.RootNamespace = SistemaVentaAngular
-build_property.ProjectDir = C:\Users\mario\OneDrive\Documentos\GitHub\ventasCaramelo\
+build_property.ProjectDir = C:\Users\mario\OneDrive\Documentos\GitHub\ventas1.0\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\mario\OneDrive\Documentos\GitHub\ventasCaramelo
+build_property.MSBuildProjectDirectory = C:\Users\mario\OneDrive\Documentos\GitHub\ventas1.0
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mario/OneDrive/Documentos/GitHub/ventasCaramelo/Pages/Error.cshtml]
+[C:/Users/mario/OneDrive/Documentos/GitHub/ventas1.0/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mario/OneDrive/Documentos/GitHub/ventasCaramelo/Pages/_ViewImports.cshtml]
+[C:/Users/mario/OneDrive/Documentos/GitHub/ventas1.0/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

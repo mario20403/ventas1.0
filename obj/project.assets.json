@@ -2109,11 +2109,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventasCaramelo\\SistemaVentaAngular.csproj",
+      "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\SistemaVentaAngular.csproj",
       "projectName": "SistemaVentaAngular",
-      "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventasCaramelo\\SistemaVentaAngular.csproj",
+      "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\SistemaVentaAngular.csproj",
       "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventasCaramelo\\obj\\",
+      "outputPath": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config",

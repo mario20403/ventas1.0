@@ -129,7 +129,7 @@ export class VenderComponent implements OnInit {
         next: (data) => {
 
           if (data.status) {
-            this.totalPagar = 0.00;
+            this.totalPagar = 0.;
             this.ELEMENT_DATA = [];
             this.dataSource = new MatTableDataSource(this.ELEMENT_DATA);
             this.tipodePago = "Efectivo";
