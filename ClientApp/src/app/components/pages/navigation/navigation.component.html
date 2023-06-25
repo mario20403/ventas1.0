@@ -3,11 +3,11 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false">
-
+  <body>
     <mat-toolbar>
-      Club caramelo
+      <h1>Club Caramelo</h1>
     </mat-toolbar>
-
+  
     <mat-nav-list>
 
       <mat-list-item routerLink="/pages/dashboard">
@@ -41,7 +41,7 @@
       </mat-list-item>
 
     </mat-nav-list>
-    
+  </body>
 
 
   </mat-sidenav>
@@ -60,7 +60,6 @@
         <mat-icon>logout</mat-icon>
       </button>
     </mat-toolbar>
-    <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

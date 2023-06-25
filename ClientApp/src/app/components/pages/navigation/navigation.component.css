@@ -1,13 +1,19 @@
 .sidenav-container {
   height: 100%;
+  color: white;
 }
 
 .sidenav {
   width: 200px;
+
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
+  color:white;
+}
+.mat-list-item {
+  color: white ;
 }
 
 .mat-toolbar.mat-primary {
@@ -16,5 +22,17 @@
   z-index: 1;
 }
 .example-spacer {
-  flex: 1 1 auto;
+  flex: 1 2 auto;
+}
+
+.mat-sidenav-container{
+  background-image: url(https://img.freepik.com/vector-gratis/cute-dibujos-animados-perro-salchicha_138676-2313.jpg?w=2000);
+  background-repeat:  repeat;
+  background-size:  300px;
+}
+
+.mat-toolbar,body{
+  background-color: rgb(38, 67, 129) ;
+
+
 }
