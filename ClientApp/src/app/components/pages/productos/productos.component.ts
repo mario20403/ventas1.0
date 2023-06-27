@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Producto } from '../../../interfaces/producto';
 import { DialogDeleteProductoComponent } from '../modals/dialog-delete-producto/dialog-delete-producto.component';
 import { ProductoService } from '../../../services/producto.service';
-
+import { ApiProductosService } from '../../../services/api-productos.service';
 
 const ELEMENT_DATA: Producto[] = [
   { idProducto: 1, nombre: "yougur gloria", idCategoria: 1, descripcionCategoria:"Lacteos", stock: 30, precio: "2.5" },
@@ -30,7 +30,8 @@ export class ProductosComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private _snackBar: MatSnackBar,
-    private _productoServicio: ProductoService
+    private _productoServicio: ProductoService,
+    private ApiProductosService:ApiProductosService 
   ) {
 
   }
@@ -63,6 +64,22 @@ export class ProductosComponent implements OnInit {
       }
     })
   }
+  mostrarProductosApi() {
+    this.ApiProductosService.getData().subscribe({
+      next: (data) => {
+        if (data.status)
+          this.dataSource.data = data.value;
+        else
+          this._snackBar.open("No se encontraron datos", 'Oops!', { duration: 2000 });
+      },
+      error: (e) => {
+      },
+      complete: () => {
+
+      }
+    })
+  }
+
 
 
   agregarProducto() {
