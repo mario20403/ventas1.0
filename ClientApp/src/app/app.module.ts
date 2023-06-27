@@ -23,7 +23,7 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
 
     ReusableModule,
     NgxMaskModule.forRoot()

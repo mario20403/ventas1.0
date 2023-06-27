@@ -9,6 +9,8 @@ import { VentaService } from '../../../services/venta.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogResultadoVentaComponent } from '../modals/dialog-resultado-venta/dialog-resultado-venta.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ApiProductosService } from '../../../services/api-productos.service';
+
 
 
 
@@ -22,6 +24,8 @@ export class VenderComponent implements OnInit {
   ELEMENT_DATA: DetalleVenta[] = [];
   deshabilitado: boolean = false;
 
+
+
   filteredOptions!: Producto[];
   agregarProducto!: Producto;
   tipodePago: string = "Efectivo";
@@ -31,7 +35,12 @@ export class VenderComponent implements OnInit {
   displayedColumns: string[] = ['producto', 'cantidad', 'precio', 'total','accion'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
+  data: any[] = [];
+
+  
+
   constructor(
+    private apiProductosService: ApiProductosService,
     private fb: FormBuilder,
     private _productoServicio: ProductoService,
     private _ventaServicio: VentaService,
@@ -62,10 +71,21 @@ export class VenderComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
+    this.llenarData();
 
   }
 
+  llenarData() {
+
+    this.apiProductosService.getData().subscribe(data => {
+      this.data = data;
+      console.log(this.data);
+    })
+
+
+  }
   private _filter(value: any): Producto[] {
     const filterValue = typeof value === "string" ? value.toLowerCase() : value.nombre.toLowerCase();
     return this.options.filter(option => option.nombre.toLowerCase().includes(filterValue));

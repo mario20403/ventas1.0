@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7FemxRRKikF05O1Swxn+4SlSSYi224FfevqYFQYZ8hY=",
+  "Hash": "JvTfgIFoy5a3CeXQ+rExsUCY4gxND8HnWZxvizl0eYo=",
   "Source": "SistemaVentaAngular",
   "BasePath": "_content/SistemaVentaAngular",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "SistemaVentaAngular\\wwwroot",
       "Source": "SistemaVentaAngular",
-      "ContentRoot": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Panchi\\Documents\\ventas1.0\\wwwroot\\",
       "BasePath": "_content/SistemaVentaAngular",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Panchi\\Documents\\ventas1.0\\wwwroot\\favicon.ico",
       "SourceId": "SistemaVentaAngular",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Panchi\\Documents\\ventas1.0\\wwwroot\\",
       "BasePath": "_content/SistemaVentaAngular",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

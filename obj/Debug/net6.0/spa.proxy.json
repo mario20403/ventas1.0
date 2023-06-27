@@ -2,7 +2,7 @@
 "SpaProxyServer": {
 "ServerUrl": "http://localhost:44496",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\ClientApp\\",
+"WorkingDirectory": "C:\\Users\\Panchi\\Documents\\ventas1.0\\ClientApp\\",
 "MaxTimeoutInSeconds": "120"
 }
 }
