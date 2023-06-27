@@ -25,10 +25,12 @@
   flex: 1 2 auto;
 }
 
-.mat-sidenav-container{
-  background-image: url(https://img.freepik.com/vector-gratis/cute-dibujos-animados-perro-salchicha_138676-2313.jpg?w=2000);
-  background-repeat:  repeat;
-  background-size:  300px;
+.mat-sidenav-container {
+  background: url(https://www.travelreport.mx/wp-content/uploads/2020/01/diferencia-entre-un-pub-y-un-bar-bar.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
 }
 
 .mat-toolbar,body{
