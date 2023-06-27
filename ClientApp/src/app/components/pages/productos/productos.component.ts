@@ -38,6 +38,8 @@ export class ProductosComponent implements OnInit {
 
   ngOnInit(): void {
     this.mostrarProductos();
+    this.mostrarProductosApi();
+
   }
 
   ngAfterViewInit() {
@@ -67,20 +69,30 @@ export class ProductosComponent implements OnInit {
   mostrarProductosApi() {
     this.ApiProductosService.getData().subscribe({
       next: (data) => {
-        if (data.status)
-          this.dataSource.data = data.value;
-        else
+        if (data.length > 0) {
+          const productos = data.map((producto: any) => {
+            return {
+              idProducto: producto.id,
+              nombre: producto.nombre,
+              categoria: "4" ,// Puedes utilizar el campo 'detalle' como categoría
+              stock: producto.stock,
+              precio: producto.precio
+            };
+          });
+          this.dataSource.data = productos;
+        } else {
           this._snackBar.open("No se encontraron datos", 'Oops!', { duration: 2000 });
+        }
       },
       error: (e) => {
       },
       complete: () => {
-
       }
-    })
+    });
   }
 
 
+  
 
   agregarProducto() {
     this.dialog.open(DialogProductoComponent, {
@@ -146,3 +158,4 @@ export class ProductosComponent implements OnInit {
   }
 
 }
+

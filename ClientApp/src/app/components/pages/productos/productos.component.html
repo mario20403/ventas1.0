@@ -14,7 +14,7 @@
     </mat-form-field>
 
     <div class="mat-elevation-z2">
-      <table mat-table [dataSource]="data">
+      <table mat-table [dataSource]="dataSource.data">
 
         <!-- Nombre Column -->
         <ng-container matColumnDef="nombre">
@@ -27,6 +27,7 @@
           <th mat-header-cell *matHeaderCellDef> Categoría </th>
           <td mat-cell *matCellDef="let producto"> {{producto.descripcionCategoria}} </td>
         </ng-container>
+
 
         <!-- Stock Column -->
         <ng-container matColumnDef="stock">
