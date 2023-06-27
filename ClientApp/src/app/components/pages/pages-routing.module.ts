@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HistorialventaComponent } from './historialventa/historialventa.component';
@@ -7,6 +7,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { VenderComponent } from './vender/vender.component';
+import { ApiProductosService } from 'src/app/services/api-productos.service';
 
 const routes: Routes = [
   {
@@ -25,4 +26,24 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule implements OnInit { 
+
+  data : any[] =[];
+
+  constructor(private apiProductosService: ApiProductosService){}
+
+  ngOnInit(): void {
+    this.llenarData();
+    
+  }
+
+  llenarData(){
+
+    this.apiProductosService.getData().subscribe( data=> {
+      this.data = data;
+      console.log(this.data);
+    })
+
+
+  }
+}
