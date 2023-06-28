@@ -7,30 +7,28 @@ import { ApiInfoLocalService } from '../../../services/api-info-local.service';
   styleUrls: ['./personas.component.css']
 })
 export class PersonasComponent implements OnInit {
-  sucursales: string[] = [];
+  sucursales: string[] = ['Sucursal 1', 'Sucursal 2', 'Sucursal 3', 'Sucursal 4'];
   contadorPersonas: { [key: string]: number } = {};
 
   constructor(private apiService: ApiInfoLocalService) { }
 
   ngOnInit() {
     this.recuperarContadores();
+    this.probarConexionAPI();
   }
 
   recuperarContadores() {
-    this.apiService.getData().subscribe((data) => {
-      if (data && data.sucursales) {
-        this.sucursales = data.sucursales;
-        this.sucursales.forEach((sucursal) => {
-          const contador = localStorage.getItem(sucursal);
-          if (contador) {
-            this.contadorPersonas[sucursal] = parseInt(contador, 10);
-          } else {
-            this.contadorPersonas[sucursal] = 0;
-          }
-        });
+    for (const sucursal of this.sucursales) {
+      const contador = localStorage.getItem(sucursal);
+      if (contador) {
+        this.contadorPersonas[sucursal] = parseInt(contador, 10);
+      } else {
+        this.contadorPersonas[sucursal] = 0;
       }
-    });
+    
+    };
   }
+
 
   incrementarContador(sucursal: string) {
     this.contadorPersonas[sucursal]++;
@@ -47,4 +45,16 @@ export class PersonasComponent implements OnInit {
   guardarContador(sucursal: string) {
     localStorage.setItem(sucursal, this.contadorPersonas[sucursal].toString());
   }
+
+  probarConexionAPI() {
+    this.apiService.getData().subscribe(
+      (data) => {
+        console.log('Conexión exitosa con la API:', data);
+      },
+      (error) => {
+        console.error('Error al conectar con la API:', error);
+      }
+    );
+  }
 }
+

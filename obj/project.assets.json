@@ -2104,19 +2104,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Panchi\\.nuget\\packages\\": {}
+    "C:\\Users\\mario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Panchi\\Documents\\ventas1.0\\SistemaVentaAngular.csproj",
+      "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\SistemaVentaAngular.csproj",
       "projectName": "SistemaVentaAngular",
-      "projectPath": "C:\\Users\\Panchi\\Documents\\ventas1.0\\SistemaVentaAngular.csproj",
-      "packagesPath": "C:\\Users\\Panchi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Panchi\\Documents\\ventas1.0\\obj\\",
+      "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\SistemaVentaAngular.csproj",
+      "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mario\\OneDrive\\Documentos\\GitHub\\ventas1.0\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Panchi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
