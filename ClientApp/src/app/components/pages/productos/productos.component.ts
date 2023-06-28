@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
@@ -10,36 +9,28 @@ import { DialogDeleteProductoComponent } from '../modals/dialog-delete-producto/
 import { ProductoService } from '../../../services/producto.service';
 import { ApiProductosService } from '../../../services/api-productos.service';
 
-const ELEMENT_DATA: Producto[] = [
-  { idProducto: 1, nombre: "yougur gloria", idCategoria: 1, descripcionCategoria:"Lacteos", stock: 30, precio: "2.5" },
-  { idProducto: 2, nombre: "Detergente sapolio", idCategoria: 2, descripcionCategoria:"Productos de Limpieza", stock: 23, precio: "3.5" },
-  { idProducto: 3, nombre: "Mantequilla lavie", idCategoria: 3, descripcionCategoria:"Abarrotes", stock: 25, precio: "4.5" },
-
-];
-
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'categoria', 'stock','precio', 'acciones'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['nombre', 'categoria', 'stock', 'precio', 'acciones'];
+  dataSource: MatTableDataSource<Producto>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
     private dialog: MatDialog,
     private _snackBar: MatSnackBar,
     private _productoServicio: ProductoService,
-    private ApiProductosService:ApiProductosService 
+    private apiProductosService: ApiProductosService
   ) {
-
+    this.dataSource = new MatTableDataSource<Producto>([]);
   }
 
   ngOnInit(): void {
     this.mostrarProductos();
     this.mostrarProductosApi();
-
   }
 
   ngAfterViewInit() {
@@ -66,30 +57,34 @@ export class ProductosComponent implements OnInit {
       }
     })
   }
+
   mostrarProductosApi() {
-    this.ApiProductosService.getData().subscribe({
-      next: (data) => {
+    this.apiProductosService.getData().subscribe(
+      (data: any) => {
         if (data.length > 0) {
-          const productos = data.map((producto: any) => {
+          const productos: Producto[] = data.map((producto: any) => {
             return {
               idProducto: producto.id,
-              nombre: producto.nombre,
-              categoria: "4" ,// Puedes utilizar el campo 'detalle' como categoría
+              nombre: producto.detalle,
+              descripcionCategoria: "especial", // Puedes utilizar el campo 'detalle' como categoría
               stock: producto.stock,
               precio: producto.precio
             };
           });
-          this.dataSource.data = productos;
+          this.dataSource.data = [...this.dataSource.data, ...productos];
         } else {
           this._snackBar.open("No se encontraron datos", 'Oops!', { duration: 2000 });
         }
       },
-      error: (e) => {
-      },
-      complete: () => {
+      (error: any) => {
+        console.error(error);
       }
-    });
+    );
   }
+
+
+
+
 
 
   
