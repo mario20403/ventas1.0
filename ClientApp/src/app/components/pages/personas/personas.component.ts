@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiInfoLocalService } from '../../../services/api-info-local.service';
 
 @Component({
   selector: 'app-personas',
@@ -6,24 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personas.component.css']
 })
 export class PersonasComponent implements OnInit {
-  sucursales: string[] = ['Sucursal 1', 'Sucursal 2', 'Sucursal 3', 'Sucursal 4'];
+  sucursales: string[] = [];
   contadorPersonas: { [key: string]: number } = {};
 
-  constructor() { }
+  constructor(private apiService: ApiInfoLocalService) { }
 
   ngOnInit() {
     this.recuperarContadores();
   }
 
   recuperarContadores() {
-    for (const sucursal of this.sucursales) {
-      const contador = localStorage.getItem(sucursal);
-      if (contador) {
-        this.contadorPersonas[sucursal] = parseInt(contador, 10);
-      } else {
-        this.contadorPersonas[sucursal] = 0;
+    this.apiService.getData().subscribe((data) => {
+      if (data && data.sucursales) {
+        this.sucursales = data.sucursales;
+        this.sucursales.forEach((sucursal) => {
+          const contador = localStorage.getItem(sucursal);
+          if (contador) {
+            this.contadorPersonas[sucursal] = parseInt(contador, 10);
+          } else {
+            this.contadorPersonas[sucursal] = 0;
+          }
+        });
       }
-    }
+    });
   }
 
   incrementarContador(sucursal: string) {
