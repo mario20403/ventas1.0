@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\components\pages\personas\personas.component.spec.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\src\app\components\pages\modals\" />
     <Folder Include="ClientApp\src\app\components\reusable\" />
     <Folder Include="ClientApp\src\app\services\" />

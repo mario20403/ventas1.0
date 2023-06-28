@@ -8,6 +8,7 @@ import { ReportesComponent } from './reportes/reportes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { VenderComponent } from './vender/vender.component';
 import { ApiProductosService } from 'src/app/services/api-productos.service';
+import { PersonasComponent } from './personas/personas.component'
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
       {path:'productos',component:ProductosComponent},
       {path:'vender',component:VenderComponent},
       {path:'historialventas',component:HistorialventaComponent},
-      {path:'reportes',component:ReportesComponent}
+      { path: 'reportes', component: ReportesComponent },
+      { path: 'personas', component: PersonasComponent }
     ]
   }
   ];

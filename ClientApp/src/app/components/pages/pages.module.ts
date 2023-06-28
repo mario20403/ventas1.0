@@ -18,6 +18,7 @@ import { DialogDeleteUsuarioComponent } from './modals/dialog-delete-usuario/dia
 import { DialogDeleteProductoComponent } from './modals/dialog-delete-producto/dialog-delete-producto.component';
 import { DialogDetalleVentaComponent } from './modals/dialog-detalle-venta/dialog-detalle-venta.component';
 import { DialogResultadoVentaComponent } from './modals/dialog-resultado-venta/dialog-resultado-venta.component';
+import { PersonasComponent } from './personas/personas.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { DialogResultadoVentaComponent } from './modals/dialog-resultado-venta/d
     DialogDeleteProductoComponent,
     DialogDetalleVentaComponent,
     DialogResultadoVentaComponent,
+    PersonasComponent
   ],
   imports: [
     CommonModule,
