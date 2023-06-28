@@ -1,3 +1,25 @@
 <p>personas works!</p>
+<mat-card style="margin: 20px 40px 40px 40px">
 
 
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let sucursal of sucursales">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ sucursal }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="contador">
+        <button mat-icon-button (click)="decrementarContador(sucursal)">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <span>{{ contadorPersonas[sucursal] }}</span>
+        <button mat-icon-button (click)="incrementarContador(sucursal)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  </mat-card>

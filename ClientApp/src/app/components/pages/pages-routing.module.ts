@@ -8,7 +8,7 @@ import { ReportesComponent } from './reportes/reportes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { VenderComponent } from './vender/vender.component';
 import { ApiProductosService } from 'src/app/services/api-productos.service';
-import { PersonasComponent } from './personas/personas.component'
+import { PersonasComponent } from './personas/personas.component';
 
 const routes: Routes = [
   {
