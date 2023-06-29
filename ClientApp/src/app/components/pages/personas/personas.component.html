@@ -3,21 +3,18 @@
     <mat-expansion-panel *ngFor="let sucursal of sucursales">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{ sucursal }}
+          {{ sucursal.nombre }}
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div class="contador">
-        <button mat-icon-button (click)="decrementarContador(sucursal)">
-          <mat-icon>remove</mat-icon>
-        </button>
-        <span>{{ contadorPersonas[sucursal] }}</span>
-        <button mat-icon-button (click)="incrementarContador(sucursal)">
-          <mat-icon>add</mat-icon>
-        </button>
+      <div>
+        <h3>{{ sucursal.nombre }}</h3>
+        <p>{{ sucursal.ubicacion }}</p>
+        <button mat-icon-button (click)="decrementarContador(sucursal.id)">-</button>
+        <span>{{ contadorPersonas[sucursal.id] }}</span>
+        <button mat-icon-button (click)="incrementarContador(sucursal.id)">+</button>
       </div>
+
     </mat-expansion-panel>
   </mat-accordion>
 </mat-card>
-
-

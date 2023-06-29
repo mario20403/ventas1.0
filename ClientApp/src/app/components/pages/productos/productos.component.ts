@@ -35,6 +35,7 @@ export class ProductosComponent implements OnInit {
   ) {
 
   }
+  allProductos: Producto[] = [];
 
   ngOnInit(): void {
     this.mostrarProductos();
@@ -54,18 +55,21 @@ export class ProductosComponent implements OnInit {
   mostrarProductos() {
     this._productoServicio.getProductos().subscribe({
       next: (data) => {
-        if (data.status)
-          this.dataSource.data = data.value;
-        else
+        if (data.status) {
+          this.allProductos = [...this.allProductos, ...data.value];
+          this.dataSource.data = this.allProductos;
+        } else {
           this._snackBar.open("No se encontraron datos", 'Oops!', { duration: 2000 });
+        }
       },
       error: (e) => {
       },
       complete: () => {
 
       }
-    })
+    });
   }
+
   mostrarProductosApi() {
     this.ApiProductosService.getData().subscribe({
       next: (data) => {
@@ -73,13 +77,14 @@ export class ProductosComponent implements OnInit {
           const productos = data.map((producto: any) => {
             return {
               idProducto: producto.id,
-              nombre: producto.nombre,
-              categoria: "4" ,// Puedes utilizar el campo 'detalle' como categoría
+              nombre: producto.detalle,
+              categoria: "4",
               stock: producto.stock,
               precio: producto.precio
             };
           });
-          this.dataSource.data = productos;
+          this.allProductos = [...this.allProductos, ...productos];
+          this.dataSource.data = this.allProductos;
         } else {
           this._snackBar.open("No se encontraron datos", 'Oops!', { duration: 2000 });
         }
@@ -90,6 +95,7 @@ export class ProductosComponent implements OnInit {
       }
     });
   }
+
 
 
   
