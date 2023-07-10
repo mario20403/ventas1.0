@@ -7,14 +7,14 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div>
-        <h3>{{ sucursal.nombre }}</h3>
-        <p>{{ sucursal.ubicacion }}</p>
-        <button mat-icon-button (click)="decrementarContador(sucursal.id)">-</button>
-        <span>{{ contadorPersonas[sucursal.id] }}</span>
-        <button mat-icon-button (click)="incrementarContador(sucursal.id)">+</button>
-      </div>
+
+      <p>{{ sucursal.nombre }}</p>
+      <button mat-icon-button (click)="decrementarContador(sucursal.nombre)">-</button>
+      <span>{{ contadorPersonas[sucursal.nombre] }}</span>
+      <button mat-icon-button (click)="incrementarContador(sucursal.nombre)">+</button>
+
 
     </mat-expansion-panel>
   </mat-accordion>
+  <p>{{ apiStatus }}</p>
 </mat-card>
